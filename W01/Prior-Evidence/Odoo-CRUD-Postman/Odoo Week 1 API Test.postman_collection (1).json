@@ -1,0 +1,298 @@
+{
+  "info": {
+    "_postman_id": "798300c1-4adc-4004-b3ad-a8e0139eaa6b",
+    "name": "Odoo Week 1 API Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34875824"
+  },
+  "item": [
+    {
+      "name": "01 - Read Contacts",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "bearer [PRIVATE API KEY]",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "X-Odoo-Database",
+            "value": "edu-test4620",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"context\": {\r\n    \"lang\": \"en_US\"\r\n  },\r\n  \"domain\": [],\r\n  \"fields\": [\"id\", \"name\", \"email\", \"phone\",\"city\"],\r\n  \"limit\": 10\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://edu-test4620.odoo.com/json/2/res.partner/search_read",
+          "protocol": "https",
+          "host": [
+            "edu-test4620",
+            "odoo",
+            "com"
+          ],
+          "path": [
+            "json",
+            "2",
+            "res.partner",
+            "search_read"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "02 - Create Contact",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "bearer [PRIVATE API KEY]",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "X-Odoo-Database",
+            "value": "edu-test4620",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"context\": {\r\n    \"lang\": \"en_US\"\r\n  },\r\n   \"vals_list\": {\r\n    \"name\": \"API Test Contact - Enjy\",\r\n    \"email\": \"api.test.enjy@nexulon.com\",\r\n    \"phone\": \"+201000000000\",\r\n    \"city\": \"Cairo\"\r\n  }\r\n\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://edu-test4620.odoo.com/json/2/res.partner/create",
+          "protocol": "https",
+          "host": [
+            "edu-test4620",
+            "odoo",
+            "com"
+          ],
+          "path": [
+            "json",
+            "2",
+            "res.partner",
+            "create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "03 - Update Contact",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "bearer [PRIVATE API KEY]",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "X-Odoo-Database",
+            "value": "edu-test4620",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ids\":[8],\r\n  \"context\": {\r\n    \"lang\": \"en_US\"\r\n  },\r\n   \"vals\": {\r\n    \"phone\": \"+201000000001\",\r\n    \"city\": \"Alex\"\r\n  }\r\n\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://edu-test4620.odoo.com/json/2/res.partner/write",
+          "protocol": "https",
+          "host": [
+            "edu-test4620",
+            "odoo",
+            "com"
+          ],
+          "path": [
+            "json",
+            "2",
+            "res.partner",
+            "write"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "04 - Verify Updated Contact",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "bearer [PRIVATE API KEY]",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "X-Odoo-Database",
+            "value": "edu-test4620",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"context\": {\r\n    \"lang\": \"en_US\"\r\n  },\r\n  \"domain\": [[\"id\", \"=\", 8]],\r\n  \"fields\": [\"id\", \"name\", \"email\", \"phone\", \"city\"],\r\n  \"limit\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://edu-test4620.odoo.com/json/2/res.partner/search_read",
+          "protocol": "https",
+          "host": [
+            "edu-test4620",
+            "odoo",
+            "com"
+          ],
+          "path": [
+            "json",
+            "2",
+            "res.partner",
+            "search_read"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "05 - Delete Contact",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "bearer [PRIVATE API KEY]",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "X-Odoo-Database",
+            "value": "edu-test4620",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ids\": [8],\r\n  \"context\": {\r\n    \"lang\": \"en_US\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://edu-test4620.odoo.com/json/2/res.partner/unlink",
+          "protocol": "https",
+          "host": [
+            "edu-test4620",
+            "odoo",
+            "com"
+          ],
+          "path": [
+            "json",
+            "2",
+            "res.partner",
+            "unlink"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "06 - Verify Deleted Contact",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "bearer [PRIVATE API KEY]",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "X-Odoo-Database",
+            "value": "edu-test4620",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"context\": {\r\n    \"lang\": \"en_US\"\r\n  },\r\n  \"domain\": [[\"id\", \"=\", 8]],\r\n  \"fields\": [\"id\", \"name\", \"email\", \"phone\", \"city\"],\r\n  \"limit\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://edu-test4620.odoo.com/json/2/res.partner/search_read",
+          "protocol": "https",
+          "host": [
+            "edu-test4620",
+            "odoo",
+            "com"
+          ],
+          "path": [
+            "json",
+            "2",
+            "res.partner",
+            "search_read"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
