@@ -113,4 +113,4 @@ The W02 practical deliverable requires a small end-to-end FlutterFlow applicatio
 - Working user interactions
 - Basic testing
 
-Implementation evidence will be added to the repository as the application is comple
+Implementation evidence will be added to the repository as the application is complete
