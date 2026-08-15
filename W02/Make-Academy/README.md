@@ -13,4 +13,5 @@
 
 ## Evidence
 
-Completion certificates, badges, and progress screenshots are stored in this directory.
+<img width="834" height="737" alt="image" src="https://github.com/user-attachments/assets/3c6eb5fc-2e7b-4cc0-aed2-84ed3bb51a21" />
+
