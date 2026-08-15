@@ -3,6 +3,7 @@
 ## Completed
 
 - Make Foundation
+  
 - Make Basics
 - Make Intermediate
 
